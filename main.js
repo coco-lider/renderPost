@@ -20,10 +20,11 @@ async function fetchPosts() {
 
         postUsers.forEach(item => {
             const li = document.createElement('li');
+            li.className = "post-card";
             li.innerHTML = `
                 <h3>${item.title}</h3>
                 <p>${item.body}</p>
-                <small>Author: ${item.user?.name || "Unknown"}</small>
+                <small>✍️ Author: <strong>${item.user?.name || "Unknown"}</strong></small>
             `;
             elPostList.appendChild(li);
         });
